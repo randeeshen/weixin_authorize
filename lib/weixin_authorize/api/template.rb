@@ -29,6 +29,15 @@ module WeixinAuthorize
         http_post("/message/template/send", msg)
       end
 
+      # 发送模板消息(小程序)
+      def send_miniprogram_template_msg(touser, template_id, url, miniprogram, data)
+        msg = {
+          touser: touser, template_id: template_id,
+          url: url, miniprogram: miniprogram, data: data
+        }
+        http_post("/message/template/send", msg)
+      end
+
     end
   end
 end
